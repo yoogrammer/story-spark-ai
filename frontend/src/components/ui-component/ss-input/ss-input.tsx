@@ -41,7 +41,7 @@ const SSInput = <T extends FieldValues>({
 
 
 
-  const inputType = type === "password" ? (showPassword ? "text" : "password") : type;
+  const inputType = type === "password" ? (showLocalPassword ? "text" : "password") : type;
 
   return (
     <div className="w-full min-w-0 box-border">
@@ -77,7 +77,7 @@ const SSInput = <T extends FieldValues>({
           autoFocus={autoFocus}
           {...register(name, validation)}
 
-          className={`w-full max-w-full h-11 block rounded-xl border bg-transparent text-sm transition-all duration-200 focus:outline-none focus:ring-2 ${
+          className={`w-full max-w-full h-11 block rounded-xl border bg-transparent text-sm transition-all duration-200 focus:outline-none focus:ring-2 min-w-0 overflow-hidden text-ellipsis whitespace-nowrap ${
             icon ? "pl-10" : "px-4"
           } ${type === "password" ? "pr-10" : "pr-4"} ${
             error
